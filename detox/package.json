@@ -1,13 +1,13 @@
 {
-  "name": "detox",
+  "name": "@hackinggate/detox",
   "description": "E2E tests and automation for mobile",
-  "version": "17.8.1",
+  "version": "17.8.1-workaround.4",
   "bin": {
     "detox": "local-cli/cli.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wix/Detox.git"
+    "url": "git+https://github.com/wix/Detox.git"
   },
   "nativePackage": true,
   "bugs": {
@@ -144,5 +144,8 @@
         "lines": 100
       }
     }
+  },
+  "directories": {
+    "test": "test"
   }
 }

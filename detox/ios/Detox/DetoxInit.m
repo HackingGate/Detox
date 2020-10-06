@@ -44,6 +44,9 @@ static void detoxConditionalInit()
 		settings[@"waitForDebugger"] = @((NSUInteger)[waitForDebugger integerValue]);
 	}
 	
-	[DTXDetoxManager.sharedManager startWithSynchronizationSettings:settings];
+	//Wrokaround: wait for launch screen
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[DTXDetoxManager.sharedManager startWithSynchronizationSettings:settings];
+	});
 }
 
